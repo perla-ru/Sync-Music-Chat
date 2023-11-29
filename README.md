@@ -1,19 +1,31 @@
-# **Sync Music chat**
+Пока такое решение. Нужно создать файл ```.env```, 
+скопировать туда следующие строки и заполнить пропущенные значения, чтобы подключиться к БД.
+Пользователь и база должны существовать
 
-## **Базовый сценарий**
-![6](misc/6.png)
-![7](misc/7.png)
 
-## **Backend**
+SECRET_KEY="django-insecure-p@d$v7(og((fs=%eat64ju+f7_8r*)kq+!u@j#y(foiht4w@+1"
 
-Сервер - python(jango);
-БД - postgesSQL.
+POSTGRES_ENGINE="django.db.backends.postgresql"
+POSTGRES_DB=""
+POSTGRES_USER=""
+POSTGRES_PASSWORD=""
+POSTGRES_HOST="localhost"
+POSTGRES_PORT=5432
 
-![8](misc/8.png)
-## **Экраны**
+DEBUG=True
 
-![1](misc/1.png)
-![2](misc/2.png)
-![3](misc/3.png)
-![4](misc/4.png)
-![5](misc/5.png)
+после этого нужно запустить команды:
+
+```python3 -m venv venv```
+
+```python3 -m pi install --upgrade pip```
+
+```pip install -r requirements.txt```
+
+```python3 manage.py runserver```
+
+После этого по адресу ```127.0.0.1:8000``` должна открыться страница приложения
+
+Можно сделать ```python3 manage.py createsuperuser``` и ввести данные 
+
+для регистрации пользователя-администратора 
